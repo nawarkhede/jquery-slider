@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/mystyle.css">
+</head>
+<script>
+$(document).ready(function(){
+
+	$('.pp_arrow_previous').click(function(e) {  
+		var $elements = $(".images ul li");
+		var count = $elements.length;
+		total=(Math.floor(count/6))*480;
+		
+		var selectedIndex = $("li.selected").index() + 1;
+		var div = Math.floor(selectedIndex/6);
+		if(selectedIndex==1)
+		{
+			if(count<=6)
+			{
+				//pass
+			}else{
+			
+
+			total=(Math.floor(count/6))*480;
+			//For different effect use this line and comment last one
+			//$('#slider').css({ left: -(total)+'px' });
+			$('#slider').animate({left: -(total)}, "fast",function(){inProgress = false;});
+			}
+		}
+		else{
+		selectedIndex=selectedIndex-2;
+		var div = Math.floor(selectedIndex/6);
+
+		moveby=div*480;
+		$('#slider').animate({left: -(moveby)}, "fast");
+		}
+		
+	});
+	
+	$('.pp_arrow_next').click(function(e) {  
+		var $elements = $(".images ul li");
+		var count = $elements.length;
+		
+		var selectedIndex = $("li.selected").index() + 1;
+
+		if(selectedIndex==count)
+		{
+			//For different effect use these lines (two) and comment 3rd line
+			//$('#slider').css({ position: 'absolute' });
+			//$('#slider').css({ left: '0px' });
+			$('#slider').animate({left: "0px"}, "fast",function(){inProgress = false;});
+
+		}
+		else
+		{
+		var div = Math.floor(selectedIndex/6);
+		moveby=div*480;
+		$('#slider').animate({left: -(moveby)}, "fast");
+		}
+
+	});
+	
+});
+
+
+</script>
+<body>
+  <p>A little try to make slider..</p>
+  <div class='pp_videos'>
+  <div class="pp_arrow_previous"></div>
+	<div class="images">
+		<ul style="position: absolute;" id="slider">
+		<li class="selected" >
+			<a href="#">
+			<div style="background: url(/static/img/multimedia-layover-small.png),
+																						url(images/a.png) center;
+																background-size:cover; 
+																width:73px; 
+																height:73px;"></div>
+			</a>
+		</li>
+		<li >
+			<a href="#">
+			<div style="background: url(/static/img/multimedia-layover-small.png),
+																						url(images/b.png) center;
+																background-size:cover; 
+																width:73px; 
+																height:73px;"></div>
+			</a>
+		</li>
+		<li >
+			<a href="#">
+			<div style="background: url(/static/img/multimedia-layover-small.png),
+																						url(images/c.png) center;
+																background-size:cover; 
+																width:73px; 
+																height:73px;"></div>
+			</a>
+		</li>
+		<li >
+			<a href="#">
+			<div style="background: url(/static/img/multimedia-layover-small.png),
+																						url(images/d.png) center;
+																background-size:cover; 
+																width:73px; 
+																height:73px;"></div>
+			</a>
+		</li>
+		<li >
+			<a href="#">
+			<div style="background: url(/static/img/multimedia-layover-small.png),
+																						url(images/e.png) center;
+																background-size:cover; 
+																width:73px; 
+																height:73px;"></div>
+			</a>
+		</li>
+		<li >
+			<a href="#">
+			<div style="background: url(/static/img/multimedia-layover-small.png),
+																						url(images/f.png) center;
+																background-size:cover; 
+																width:73px; 
+																height:73px;"></div>
+			</a>
+		</li>
+		<li >
+			<a href="#">
+			<div style="background: url(/static/img/multimedia-layover-small.png),
+																						url(images/g.png) center;
+																background-size:cover; 
+																width:73px; 
+																height:73px;"></div>
+			</a>
+		</li>
+		<li >
+			<a href="#">
+			<div style="background: url(/static/img/multimedia-layover-small.png),
+																						url(images/h.png) center;
+																background-size:cover; 
+																width:73px; 
+																height:73px;"></div>
+			</a>
+		</li>
+		</ul>
+	
+	</div>
+  <div class="pp_arrow_next"></div>
+  
+  </div>
+</body>
+
+
+
+</html>

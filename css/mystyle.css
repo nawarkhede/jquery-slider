@@ -1,0 +1,46 @@
+.pp_videos{
+display: block !important;
+width: 635px;
+/*margin: 0 !important;*/
+margin-left: 300px;
+height: 75px;
+}
+.pp_arrow_previous {
+display: block;
+float: left;
+width: 73px;
+height: 73px;
+border: 1px solid #333;
+background: url(../images/lightbox-prevnext.png) no-repeat left;
+cursor: pointer;
+}
+.pp_arrow_next {
+display: block;
+float: left;
+width: 73px;
+height: 73px;
+border: 1px solid #333;
+background: url(../images/lightbox-prevnext.png) no-repeat right;
+cursor: pointer;
+}
+.images {
+float: left;
+overflow: hidden;
+position: relative;
+width: 485px !important;
+height: 75px !important;
+}
+div.images ul {
+float: left;
+height: 35px;
+margin: 0 0 0 5px;
+padding: 0;
+position: relative;
+white-space: nowrap;
+}
+div.images li {
+display: block;
+float: left;
+margin: 0 5px 0 0;
+padding: 0;
+}
